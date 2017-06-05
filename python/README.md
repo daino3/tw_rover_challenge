@@ -1,4 +1,6 @@
-Python version of Thoughtworks Rover challenge.
+ThoughtWorks: Rover Challenge
+=================================
+### Language: Python
 
 ### Dependencies and Install
 Python 2.7
