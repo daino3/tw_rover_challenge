@@ -1,0 +1,38 @@
+#! /usr/local/bin/python
+
+import os
+import sys
+from IPython import embed
+from optparse import OptionParser
+
+current_path = os.path.abspath(os.path.dirname(__file__))
+lib_path = os.path.join(current_path, '../lib')
+sys.path.insert(0, os.path.abspath(lib_path))
+
+from mission import Mission
+from compass import Compass
+from rover import Rover
+from terrain import Terrain
+
+parser = OptionParser()
+
+parser.add_option("-f", "--file", dest="filename",
+                  help="write report to FILE", metavar="FILE")
+parser.add_option("-v", "--verbose", dest="verbose",
+                  help="visualize completed mission", metavar="VERBOSE")
+
+(options, args) = parser.parse_args()
+
+mission = None
+
+if options.filename:
+    mission = Mission.from_file(os.path.abspath(options.filename))
+else:
+    mission = Mission.from_file(os.path.abspath('./lib/missions/mission_b.txt'))
+
+if options.verbose:
+    mission.display_rover_missions()
+else:
+    mission.complete_rover_missions()
+    for rover in mission.rovers:
+        print(rover.current_position())
