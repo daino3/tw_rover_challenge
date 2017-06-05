@@ -11,3 +11,4 @@ class TerrainTests(unittest.TestCase):
     assert_equal(t.landscape[3], [' ', ' ', ' '])
     assert_equal(t.landscape[2], [' ', ' ', ' '])
     assert_equal(t.landscape[1], [' ', ' ', ' '])
+    assert_equal(t.landscape[0], [' ', ' ', ' '])
