@@ -1,19 +1,37 @@
-# Elixir
+ThoughtWorks: Rover Challenge
+=================================
+### Language: Elixir
 
-**TODO: Add description**
+### Dependencies and Install
+Elixir 
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `elixir` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:elixir, "~> 0.1.0"}]
-end
+```buildoutcfg
+mix deps.get
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/elixir](https://hexdocs.pm/elixir).
+### How to Run Against Files:
 
+```buildoutcfg
+$ cd elixir
+$ ./rover_challenge --file data/mission_b.txt // or this will default to mission_a.txt
+```
+
+You can visualize a completed mission with the `--verbose` flag [TODO]:
+
+```buildoutcfg
+$ cd roverpy
+$ ./rover_challenge --verbose --file data/mission_b.txt // or this will default to mission_b.txt
+```
+
+You can rebuild the CLI executable with:
+
+```buildoutcfg
+mix escript.build
+
+```
+
+### How to Run Tests:
+
+```
+$ mix test
+```

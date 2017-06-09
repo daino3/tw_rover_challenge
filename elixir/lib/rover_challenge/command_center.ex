@@ -30,7 +30,7 @@ defmodule RoverChallenge.CommandCenter do
     create_missions(new_tail, acc ++ [%Mission{rover: Rover.init(head), commands: command_info}])
   end
 
-  def execute_missions(command_ctr, options \\ %{}) do
+  def execute_missions(command_ctr) do
     %{command_ctr | missions: Enum.map(command_ctr.missions, fn(m)-> Mission.execute(m) end)}
   end
 end
